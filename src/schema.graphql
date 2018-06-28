@@ -1,0 +1,13 @@
+# import Blob from './generated/prisma.graphql'
+# import MetaData from './generated/prisma.graphql'
+
+type Query {
+  get(id: ID!): Blob!
+}
+
+type Mutation {
+  add(data: String!, encrypted: Boolean, encryption: String): Blob
+  update(id: ID!, data: String!, encrypted: Boolean, encryption: String, links: [ID!]): Blob
+  delete(id: ID!): User
+  newUser(publicKey: String!): User!
+}

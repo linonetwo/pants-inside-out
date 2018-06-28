@@ -1,0 +1,15 @@
+{
+  "name": "pants-inside-out",
+  "version": "1.0.0",
+  "description": "GraphQL backend for pants-control.",
+  "main": "dist/index.js",
+  "repository": "https://github.com/linonetwo/pants-inside-out.git",
+  "author": "lindongwu <lindongwu@memect.co>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "graphql-yoga": "^1.14.0",
+    "prisma-binding": "^2.0.0",
+    "uuid": "^3.2.1"
+  }
+}

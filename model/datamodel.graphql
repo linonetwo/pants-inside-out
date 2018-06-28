@@ -1,0 +1,24 @@
+type Blob {
+  user: User! @relation(name: "Uploader")
+  id: ID! @unique
+  data: String!
+  encrypted: Boolean! @default(value: "false")
+  metadata: MetaData! @relation(name: "BlobMetaData")
+}
+
+type MetaData {
+  id: ID! @unique
+  data: Blob! @relation(name: "DataOfMetaData")
+  encryption: String
+  links: [Blob!]! @relation(name: "RelatedBlobs")
+}
+
+type User {
+  # RSA public key
+  publicKey: String! @unique
+  # Storage limit in MB
+  limit: Float!
+  # Currently used storage size in MB
+  used: Float!
+  data: [Blob!]! @relation(name: "UploadedData")
+}
